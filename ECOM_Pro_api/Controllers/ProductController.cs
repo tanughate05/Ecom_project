@@ -62,5 +62,17 @@ namespace ECOM_Pro_api.Controllers
                 return BadRequest(" Something went wrong");
             }
         }
+        // DELETE: api/Product/3
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
+        {
+            Productcs product = _dataRepository.Get(id);
+            if (product == null)
+            {
+                return NotFound("The Employee record couldn't be found.");
+            }
+            _dataRepository.Delete(product);
+            return NoContent();
+        }
     }
 }
