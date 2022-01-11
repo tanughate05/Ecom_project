@@ -2,7 +2,7 @@
 
 namespace ECOM_Pro_api.Migrations
 {
-    public partial class first : Migration
+    public partial class firstm : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,15 @@ namespace ECOM_Pro_api.Migrations
                     Product_id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Product_Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    categoryId = table.Column<int>(type: "int", nullable: false),
+                    price = table.Column<int>(type: "int", nullable: false),
+                    is_available = table.Column<bool>(type: "bit", nullable: false),
+                    productImg = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    rating = table.Column<int>(type: "int", nullable: false),
+                    review = table.Column<int>(type: "int", nullable: false),
+                    vendor_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    warranty = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

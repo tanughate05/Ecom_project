@@ -32,21 +32,35 @@ namespace ECOM_Pro_api.Controllers
                 return NotFound("The Employee record couldn't be found.");
             }
             return Ok(product);
+            
         }
 
-        // POST: api/Employee
+        // POST: api/Product
         [HttpPost]
         public IActionResult Post([FromBody] Productcs product)
         {
+            //data validation
             if (product == null)
             {
                 return BadRequest("product is null.");
             }
-            _dataRepository.Add(product);
-            return CreatedAtRoute(
-                  "Get",
-                  new { Id = product.Product_id },
-                  product);
+            if(product.Product_Name == null)
+            {
+                return BadRequest("product name is null.");
+            }
+            //Exception Handling
+            try
+            {
+                _dataRepository.Add(product);
+                return CreatedAtRoute(
+                    "Get",
+                    new { Id = product.Product_id },
+                    product);
+            }
+            catch
+            {
+                return BadRequest(" Something went wrong");
+            }
         }
     }
 }

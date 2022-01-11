@@ -39,6 +39,14 @@ namespace ECOM_Pro_api.DataModel.DataManager
                 product.Product_id = entity.Product_id;
                 product.Product_Name = entity.Product_Name;
                 product.Description = entity.Description;
+                product.categoryId = entity.categoryId;
+                product.is_available = entity.is_available;
+                product.price = entity.price;
+                product.productImg = entity.productImg;
+                product.rating = entity.rating;
+                product.review = entity.review;
+                product.vendor_name = entity.vendor_name;
+                product.warranty = entity.warranty;
                
                 _productContext.SaveChanges();
             }

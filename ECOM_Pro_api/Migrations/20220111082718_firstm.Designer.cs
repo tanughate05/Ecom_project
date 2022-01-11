@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECOM_Pro_api.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20220110070743_first")]
-    partial class first
+    [Migration("20220111082718_firstm")]
+    partial class firstm
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,30 @@ namespace ECOM_Pro_api.Migrations
 
                     b.Property<string>("Product_Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("categoryId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("is_available")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("price")
+                        .HasColumnType("int");
+
+                    b.Property<string>("productImg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("rating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("review")
+                        .HasColumnType("int");
+
+                    b.Property<string>("vendor_name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("warranty")
+                        .HasColumnType("int");
 
                     b.HasKey("Product_id");
 
